@@ -77,6 +77,14 @@ class ApiConfig(BaseModel):
 
     host: str = "127.0.0.1"
     port: int = Field(default=8000, gt=0, lt=65536)
+    cors_origins: list[str] = Field(
+        default_factory=list,
+        description="Allowed CORS origins. If empty, defaults to localhost only.",
+    )
+    ws_auth_token: str | None = Field(
+        default=None,
+        description="Optional token for WebSocket authentication.",
+    )
 
 
 class Config(BaseModel):
