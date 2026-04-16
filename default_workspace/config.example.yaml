@@ -17,7 +17,12 @@ default_agent: pickle
 # webread:
 #   provider: crawl4ai
 
-# api: {}
+# api:
+#   host: 127.0.0.1
+#   port: 8000
+#   cors_origins:              # Allowed CORS origins (defaults to localhost only if empty)
+#     - "http://localhost:3000"
+#   ws_auth_token: null        # Optional: set a token to require WebSocket authentication
 
 # channels:
 #   enabled: true
